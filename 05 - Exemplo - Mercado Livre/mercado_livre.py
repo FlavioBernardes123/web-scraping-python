@@ -1,6 +1,5 @@
-
 # > EXEMPLO
-# - Obtendo produtos do Mercado Livre a partir de uma busca realizada pelo usuário
+# - Obtendo produtos do Mercado Livre a partir de uma busca realizada pelo usu�rio
 
 import requests
 from bs4 import BeautifulSoup
@@ -23,17 +22,13 @@ for produto in produtos:
     centavos = produto.find('span', attrs={'class': 'price-tag-cents'})
 
     print(produto.prettify())
-    print('Título do produto:', titulo.text)
+    print('T��tulo do produto:', titulo.text)
     print('Link do produto:', link['href'])
 
     if (centavos):
-        print('Preço do produto: R$', real.text + ',' + centavos.text)
+        print('Pre�o do produto: R$', real.text + ',' + centavos.text)
     else:
-        print('Preço do produto: R$', real.text)
+        print('Pre�o do produto: R$', real.text)
     
     print('\n\n')
     break
-
-
-
-
